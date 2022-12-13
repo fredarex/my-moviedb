@@ -57,8 +57,7 @@ function Home() {
               {
                 search.length > 0 ?
                 <div>
-                  <Slide data={search} />
-                  
+                  <Slide data={search} />   
                 </div>
                 : null
               }  
@@ -86,9 +85,7 @@ function Home() {
                 </div>
                 :null
               }
-              
             </div>
-            
           </div>
         }
       </div>
