@@ -8,12 +8,7 @@ export const fetchByCategorySeries = (cat) => async (dispatch) => {
         const {data} = await axios(
             `https://www.omdbapi.com/?s=series&apikey=${process.env.REACT_APP_API_KEY}`
         );
-        const getSeries = data.Search.map((item,index) => 
-         {
-            if(item.Type == cat){
-                return item;
-            }
-        })
+        const getSeries = data.Search.filter((item,index) => item.Type === cat && item) 
         if(getSeries) {
             dispatch({
                 type: moviesTypes.SET_BY_CATEGORY_SERIES,
@@ -37,14 +32,9 @@ export const fetchByCategoryMovie = (cat) => async (dispatch) => {
             type:moviesTypes.FETCH_BY_CATEGORY_MOVIE
         });
         const {data} = await axios(
-            `https://www.omdbapi.com/?s=series&apikey=${process.env.REACT_APP_API_KEY}`
+            `https://www.omdbapi.com/?s=thief&apikey=${process.env.REACT_APP_API_KEY}`
         );
-        const getSeries = data.Search.map((item,index) => 
-         {
-            if(item.Type == cat){
-                return item;
-            }
-        })
+        const getSeries = data.Search.map((item,index) => item.Type === cat && item)
         if(getSeries) {
             dispatch({
                 type: moviesTypes.SET_BY_CATEGORY_MOVIE,
@@ -68,13 +58,14 @@ export const searchByTitle = (input) => async (dispatch) => {
         dispatch({
             type:moviesTypes.SEARCH_BY_TITLE
         });
+        
         const {data} = await axios(
             `https://www.omdbapi.com/?s=${input}&apikey=${process.env.REACT_APP_API_KEY}`
         );
-        if(data) {
+        if(data.Search) {
             dispatch({
                 type: moviesTypes.SET_BY_TITLE,
-                payload:data
+                payload:data.Search
             });
         }else {
             dispatch({
