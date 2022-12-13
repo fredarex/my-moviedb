@@ -1,6 +1,51 @@
-.slick-list {
-    height:300px;
+body {
+    overflow-x: hidden;
 }
+.movie-container {
+    margin-bottom: 48px;
+    margin-top: 18px;
+
+}
+
+@media screen and (max-width:640px){
+    .movie-container {
+        margin-bottom: 33px;
+        margin-top: 26px;
+    
+    }
+}
+@media screen and (min-width: 1601px) {
+    .slick-slider {
+        width: 1990px;
+        overflow-x: hidden;
+    }
+}
+@media screen and (max-width: 1600px) {
+    .slick-slider {
+        width:1550px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .slick-list {
+        height:200px;
+    }
+    .slick-slide, .slick-track div {
+        width: 200px;
+        height: 200px;
+        
+    }
+
+}
+.slick-slide {
+    width: 300px;
+    height: 300px;
+    overflow-y: hidden;
+    
+}
+    
+
+
+
 
 
 

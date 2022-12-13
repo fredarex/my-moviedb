@@ -46,6 +46,14 @@ export const moviesReducer = (state=initialState,action) => {
                     }
                 }
             }
+            case moviesTypes.SET_BY_TITLE:
+                return {
+                    ...state,
+                    search:{
+                        ...state.search,
+                        data:action.payload
+                    }
+                }
         case moviesTypes.FETCH_BY_CATEGORY_SERIES_ERROR:
             return {
                 ...state,
