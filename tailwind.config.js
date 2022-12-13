@@ -11,7 +11,7 @@ module.exports = {
         'primary':'' 
       },
       fontSize:{
-        'kbodymain':'64px',
+        'kbodymain':'72px',
         'kbody1':'56px',
         'kbody2':'48px',
         'kbody3':'36px',
@@ -22,7 +22,7 @@ module.exports = {
 
       },
       fontFamily: {
-        // Inter: ['Inter', ...defaultTheme.fontFamily.sans]
+        DM: ['DM Sans', ...defaultTheme.fontFamily.sans]
       }
     }
   },
